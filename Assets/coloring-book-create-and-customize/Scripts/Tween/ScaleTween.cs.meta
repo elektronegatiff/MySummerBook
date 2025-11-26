@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: a381918c4585afa4eb524c8b9426f808
+timeCreated: 1485868503
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 265788
+  packageName: Coloring Book - Customize And Create
+  packageVersion: 3.0.0
+  assetPath: Assets/coloring-book-create-and-customize/Scripts/Tween/ScaleTween.cs
+  uploadId: 794626

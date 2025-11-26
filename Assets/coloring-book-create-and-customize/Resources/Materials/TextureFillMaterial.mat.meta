@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 366b73f3b9b5fe6409a157251b1b232a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 265788
+  packageName: Coloring Book - Customize And Create
+  packageVersion: 3.0.0
+  assetPath: Assets/coloring-book-create-and-customize/Resources/Materials/TextureFillMaterial.mat
+  uploadId: 794626

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 10f6ed09dfe72a241a581e8c67711398
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 265788
+  packageName: Coloring Book - Customize And Create
+  packageVersion: 3.0.0
+  assetPath: Assets/coloring-book-create-and-customize/Tutorial (Minimal Setup)/TutorialLoader.cs
+  uploadId: 794626

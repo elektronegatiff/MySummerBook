@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 6bba9c035fe274f90a534295381f33da
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 265788
+  packageName: Coloring Book - Customize And Create
+  packageVersion: 3.0.0
+  assetPath: Assets/coloring-book-create-and-customize/Materials/RegionTextureRenderMaterial
+    Deduct Mask.mat
+  uploadId: 794626

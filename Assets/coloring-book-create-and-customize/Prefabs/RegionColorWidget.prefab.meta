@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a4f938e15351ccc45939ef5546d58dc9
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 265788
+  packageName: Coloring Book - Customize And Create
+  packageVersion: 3.0.0
+  assetPath: Assets/coloring-book-create-and-customize/Prefabs/RegionColorWidget.prefab
+  uploadId: 794626

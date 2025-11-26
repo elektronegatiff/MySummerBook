@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 961a98388f89ca044810a4e928cd388c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2655988077585873504
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 265788
+  packageName: Coloring Book - Customize And Create
+  packageVersion: 3.0.0
+  assetPath: Assets/coloring-book-create-and-customize/TextureImporter.preset
+  uploadId: 794626

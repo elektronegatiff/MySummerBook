@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 38bc8a84eba979545a3e49343af701c2
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 265788
+  packageName: Coloring Book - Customize And Create
+  packageVersion: 3.0.0
+  assetPath: Assets/coloring-book-create-and-customize/Resources/Shaders/ColorMask.shader
+  uploadId: 794626

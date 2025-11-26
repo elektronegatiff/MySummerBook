@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 4adf69a026569ec49969f5e6e8ecb7ed
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 265788
+  packageName: Coloring Book - Customize And Create
+  packageVersion: 3.0.0
+  assetPath: Assets/coloring-book-create-and-customize/Scripts/Menu/Overlays/Prompt/ColoringStyleSelectPrompt.cs
+  uploadId: 794626

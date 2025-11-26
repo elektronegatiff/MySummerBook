@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 164ac75cd46a40846bdf7c10f2cba99d
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 265788
+  packageName: Coloring Book - Customize And Create
+  packageVersion: 3.0.0
+  assetPath: Assets/coloring-book-create-and-customize/Prefabs/Menu/Overlay/ColoringBookCompletePrompt.prefab
+  uploadId: 794626

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4389de7f1ca35461e83df1f836cc7d7e
+ComputeShaderImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 265788
+  packageName: Coloring Book - Customize And Create
+  packageVersion: 3.0.0
+  assetPath: Assets/coloring-book-create-and-customize/Resources/ComputeShaders/countPixels.compute
+  uploadId: 794626

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e1bcc5862e9414e479b48aebe5e33825
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 265788
+  packageName: Coloring Book - Customize And Create
+  packageVersion: 3.0.0
+  assetPath: Assets/coloring-book-create-and-customize/Scripts/Tools/Jobs/CountPixelsJob.cs
+  uploadId: 794626

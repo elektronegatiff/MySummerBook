@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b1c13dada8604314dab7bea6d9fdd092
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 265788
+  packageName: Coloring Book - Customize And Create
+  packageVersion: 3.0.0
+  assetPath: Assets/coloring-book-create-and-customize/Prefabs/Menu/Overlay/GameplayOverlay.prefab
+  uploadId: 794626

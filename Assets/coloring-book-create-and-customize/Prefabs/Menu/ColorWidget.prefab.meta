@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fe461926c249a174e9db49080bfc94bd
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 265788
+  packageName: Coloring Book - Customize And Create
+  packageVersion: 3.0.0
+  assetPath: Assets/coloring-book-create-and-customize/Prefabs/Menu/ColorWidget.prefab
+  uploadId: 794626

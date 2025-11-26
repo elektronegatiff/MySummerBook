@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 413c6ea1f9b884b2f91476fba4e193e9, type: 3}
+  m_Name: Ball
+  m_EditorClassIdentifier: 
+  texture: {fileID: 2800000, guid: 8f79514e015b13944846c2ec790b9412, type: 3}
+  coloringStyle: 0
+  errorSize: 99
+  panelPosition: {x: -8.841652, y: -41.081654}
+  panelZoomValue: 0.7657797
+  regions:
+  - texture: {fileID: 2800000, guid: b977ffff16e25be4baabb3a0b9138b26, type: 3}
+    mainColor: {r: 1, g: 0.8603482, b: 0, a: 1}
+    location:
+      x: 540
+      y: 227
+    textureSize:
+      x: 83
+      y: 88
+    colorIndexLocation:
+      x: 558
+      y: 287
+    originalPixelCount: 3600
+    downscale: 1
+    downscalePixelCount: 3337
+    active: 1
+  - texture: {fileID: 2800000, guid: 030928cb2531bde44a4fb6909a6c8827, type: 3}
+    mainColor: {r: 1, g: 0.8603482, b: 0, a: 1}
+    location:
+      x: 501
+      y: 255
+    textureSize:
+      x: 39
+      y: 62
+    colorIndexLocation:
+      x: 515
+      y: 289
+    originalPixelCount: 917
+    downscale: 1
+    downscalePixelCount: 758
+    active: 1
+  - texture: {fileID: 2800000, guid: 302ec55affea59f45bfa18a50a4b1a6d, type: 3}
+    mainColor: {r: 1, g: 0.8603482, b: 0, a: 1}
+    location:
+      x: 510
+      y: 327
+    textureSize:
+      x: 32
+      y: 25
+    colorIndexLocation:
+      x: 529
+      y: 337
+    originalPixelCount: 425
+    downscale: 1
+    downscalePixelCount: 371
+    active: 1
+  - texture: {fileID: 2800000, guid: 173bae779ea938e4ca426cd78aee3fba, type: 3}
+    mainColor: {r: 1, g: 0.8603482, b: 0, a: 1}
+    location:
+      x: 557
+      y: 333
+    textureSize:
+      x: 67
+      y: 29
+    colorIndexLocation:
+      x: 583
+      y: 353
+    originalPixelCount: 1012
+    downscale: 1
+    downscalePixelCount: 830
+    active: 1
+  - texture: {fileID: 2800000, guid: 663fa043a2144cd4bb01f63d3e67f054, type: 3}
+    mainColor: {r: 1, g: 0, b: 0.7765708, a: 1}
+    location:
+      x: 424
+      y: 711
+    textureSize:
+      x: 224
+      y: 210
+    colorIndexLocation:
+      x: 544
+      y: 748
+    originalPixelCount: 31421
+    downscale: 1
+    downscalePixelCount: 30539
+    active: 1

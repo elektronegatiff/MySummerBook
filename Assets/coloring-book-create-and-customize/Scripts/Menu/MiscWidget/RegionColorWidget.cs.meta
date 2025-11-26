@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 66eb17e90d943474fa627602e75711a9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 265788
+  packageName: Coloring Book - Customize And Create
+  packageVersion: 3.0.0
+  assetPath: Assets/coloring-book-create-and-customize/Scripts/Menu/MiscWidget/RegionColorWidget.cs
+  uploadId: 794626
