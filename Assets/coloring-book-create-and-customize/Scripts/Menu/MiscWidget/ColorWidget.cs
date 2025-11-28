@@ -13,8 +13,8 @@ namespace HootyBird.ColoringBook.Menu.Widgets
         private Image border;
         [SerializeField]
         private Color selectedBorderColor;
-        [SerializeField]
-        private TMP_Text label;
+        //[SerializeField]
+        //private TMP_Text label;
 
         [SerializeField]
         private GameObject completeIcon;
@@ -44,7 +44,7 @@ namespace HootyBird.ColoringBook.Menu.Widgets
 
         public void SetText(string text)
         {
-            label.text = text;
+            //label.text = text;
         }
 
         public void SetSelectedState(bool value)
