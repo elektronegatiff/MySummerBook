@@ -15,8 +15,8 @@ MonoBehaviour:
   texture: {fileID: 2800000, guid: 0d4d74c88794c44e6a69692b934f8a5e, type: 3}
   coloringStyle: 0
   errorSize: 25
-  panelPosition: {x: 8.805458, y: -87.38521}
-  panelZoomValue: 0.3232422
+  panelPosition: {x: -2.4104004, y: -90.18547}
+  panelZoomValue: 0.3336943
   regions:
   - texture: {fileID: 2800000, guid: 6813717cc10204b5499b1ecbee1171c9, type: 3}
     mainColor: {r: 0.48235294, g: 0.30980393, b: 0.2509804, a: 1}
@@ -46,7 +46,7 @@ MonoBehaviour:
       y: 349
     originalPixelCount: 48409
     downscale: 2
-    downscalePixelCount: 11077
+    downscalePixelCount: 11074
     active: 1
   - texture: {fileID: 2800000, guid: 9ff79f380dc784da380903e689f04b71, type: 3}
     mainColor: {r: 0.95686275, g: 0.43529412, b: 0.050980393, a: 1}
