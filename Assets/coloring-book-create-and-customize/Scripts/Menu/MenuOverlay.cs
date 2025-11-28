@@ -4,6 +4,7 @@ using HootyBird.ColoringBook.Services;
 using HootyBird.ColoringBook.Tween;
 using System.Collections.Generic;
 using UnityEngine;
+using EasyTransition;
 
 namespace HootyBird.ColoringBook.Menu
 {
@@ -15,7 +16,6 @@ namespace HootyBird.ColoringBook.Menu
     {
         [SerializeField]
         private bool closePreviousWhenOpened = true;
-
         [SerializeField]
         [Tooltip("What audio to play when onBack invoked")]
         protected string onBackSfx = "menu-back";
@@ -23,9 +23,23 @@ namespace HootyBird.ColoringBook.Menu
         [SerializeField]
         protected bool isDefault = false;
 
+        [Header("Easy Transitions")]
+        [SerializeField]
+        protected TransitionSettings openTransition;
+        [SerializeField]
+        protected TransitionSettings closeTransition;
+        [SerializeField]
+        protected float transitionDelay = 0f;
+        [SerializeField]
+        protected bool useTransitionOnBack = true;
+
         protected List<MenuWidget> widgets;
         protected CanvasGroup canvasGroup;
         protected TweenBase tween;
+
+        private bool isTransitioning;
+        private MenuOverlay pendingOverlay;
+        private System.Action pendingAction;
 
         /// <summary>
         /// Controller that this overlay is under.
@@ -42,6 +56,7 @@ namespace HootyBird.ColoringBook.Menu
         public bool ClosePreviousWhenOpened => closePreviousWhenOpened;
         public bool Interactable => canvasGroup ? canvasGroup.interactable : gameObject.activeInHierarchy;
         public RectTransform RectTransform { get; protected set; }
+        public bool IsTransitioning => isTransitioning;
 
         protected virtual void Awake()
         {
@@ -64,8 +79,13 @@ namespace HootyBird.ColoringBook.Menu
             }
         }
 
+        protected virtual void OnDestroy()
+        {
+            ClearTransitionEvents();
+        }
+
         /// <summary>
-        /// Invoked when overlay is opened.
+        /// Invoked when overlay is opened. (Orijinal imza korundu!)
         /// </summary>
         public virtual void Open()
         {
@@ -85,7 +105,7 @@ namespace HootyBird.ColoringBook.Menu
         }
 
         /// <summary>
-        /// Invoked when overlay is closed.
+        /// Invoked when overlay is closed. (Orijinal imza korundu!)
         /// </summary>
         public virtual void Close(bool animate = true)
         {
@@ -108,9 +128,148 @@ namespace HootyBird.ColoringBook.Menu
         }
 
         /// <summary>
+        /// Invoked when back button is pressed
+        /// </summary>
+        public virtual void OnBack()
+        {
+            if (isTransitioning) return;
+
+            AudioService.Instance.PlaySfx(onBackSfx);
+
+            if (useTransitionOnBack && closeTransition != null && CanUseTransition())
+            {
+                TransitionWithAction(() => MenuController.GoBack(true));
+            }
+            else
+            {
+                MenuController.GoBack();
+            }
+        }
+
+        #region Easy Transitions
+
+        /// <summary>
+        /// Transition ile başka bir overlay'e geç
+        /// </summary>
+        public void TransitionToOverlay<T>() where T : MenuOverlay
+        {
+            var targetOverlay = MenuController.GetOverlay<T>();
+            TransitionToOverlay(targetOverlay);
+        }
+
+        /// <summary>
+        /// Transition ile başka bir overlay'e geç
+        /// </summary>
+        public void TransitionToOverlay(MenuOverlay targetOverlay)
+        {
+            if (isTransitioning || targetOverlay == null) return;
+
+            TransitionSettings transitionToUse = closeTransition != null ? closeTransition : targetOverlay.openTransition;
+
+            if (transitionToUse != null && CanUseTransition())
+            {
+                isTransitioning = true;
+                pendingOverlay = targetOverlay;
+
+                var transitionManager = TransitionManager.Instance();
+                ClearTransitionEvents();
+                transitionManager.onTransitionCutPointReached += OnTransitionCutPoint;
+                transitionManager.onTransitionEnd += OnTransitionEnd;
+
+                transitionManager.Transition(transitionToUse, transitionDelay);
+            }
+            else
+            {
+                PerformOverlaySwitch(targetOverlay);
+            }
+        }
+
+        /// <summary>
+        /// Transition ile bir action çalıştır
+        /// </summary>
+        public void TransitionWithAction(System.Action action)
+        {
+            if (isTransitioning) return;
+
+            TransitionSettings transitionToUse = closeTransition != null ? closeTransition : openTransition;
+
+            if (transitionToUse != null && CanUseTransition())
+            {
+                isTransitioning = true;
+                pendingAction = action;
+
+                var transitionManager = TransitionManager.Instance();
+                ClearTransitionEvents();
+                transitionManager.onTransitionCutPointReached += OnActionTransitionCutPoint;
+                transitionManager.onTransitionEnd += OnTransitionEnd;
+
+                transitionManager.Transition(transitionToUse, transitionDelay);
+            }
+            else
+            {
+                action?.Invoke();
+            }
+        }
+
+        /// <summary>
+        /// TransitionManager mevcut mu kontrol et
+        /// </summary>
+        protected bool CanUseTransition()
+        {
+            return TransitionManager.Instance() != null;
+        }
+
+        private void OnTransitionCutPoint()
+        {
+            var transitionManager = TransitionManager.Instance();
+            transitionManager.onTransitionCutPointReached -= OnTransitionCutPoint;
+
+            if (pendingOverlay != null)
+            {
+                PerformOverlaySwitch(pendingOverlay);
+                pendingOverlay = null;
+            }
+        }
+
+        private void OnActionTransitionCutPoint()
+        {
+            var transitionManager = TransitionManager.Instance();
+            transitionManager.onTransitionCutPointReached -= OnActionTransitionCutPoint;
+
+            pendingAction?.Invoke();
+            pendingAction = null;
+        }
+
+        private void OnTransitionEnd()
+        {
+            var transitionManager = TransitionManager.Instance();
+            transitionManager.onTransitionEnd -= OnTransitionEnd;
+
+            isTransitioning = false;
+        }
+
+        private void PerformOverlaySwitch(MenuOverlay targetOverlay)
+        {
+            this.Close(false);
+            MenuController.OpenOverlay(targetOverlay);
+        }
+
+        private void ClearTransitionEvents()
+        {
+            var transitionManager = TransitionManager.Instance();
+            if (transitionManager != null)
+            {
+                transitionManager.onTransitionCutPointReached -= OnTransitionCutPoint;
+                transitionManager.onTransitionCutPointReached -= OnActionTransitionCutPoint;
+                transitionManager.onTransitionEnd -= OnTransitionEnd;
+            }
+        }
+
+        #endregion
+
+        /// <summary>
         /// Removes overlay from active overlays stack, and closes it.
         /// </summary>
-        /// <param name="animate"></param>
         public void CloseSelf(bool animate = true)
         {
             if (MenuController)
@@ -142,21 +301,10 @@ namespace HootyBird.ColoringBook.Menu
             SetInteractable(false);
             canvasGroup.blocksRaycasts = true;
         }
-        
-        /// <summary>
-        /// Invoked when back button is pressed (<see cref="MenuController.Update"/>);
-        /// </summary>
-        public virtual void OnBack()
-        {
-            AudioService.Instance.PlaySfx(onBackSfx);
-
-            MenuController.GoBack();
-        }
 
         /// <summary>
         /// Change overlay interactable state.
         /// </summary>
-        /// <param name="state"></param>
         public void SetInteractable(bool state)
         {
             if (canvasGroup)

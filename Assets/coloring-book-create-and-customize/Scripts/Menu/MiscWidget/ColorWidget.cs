@@ -22,6 +22,7 @@ namespace HootyBird.ColoringBook.Menu.Widgets
         private Button button;
         private Color defaultBorderColor;
 
+
         public Color Color { get; private set; }
         public Action<ColorWidget> OnClicked { get; set; }
 

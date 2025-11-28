@@ -19,7 +19,8 @@ namespace HootyBird.ColoringBook.Menu.Overlays
 
         public void PlayButtonOnClick()
         {
-            MenuController.OpenOverlay(MenuController.GetOverlay<SelectColoringBookOverlay>());
+            //MenuController.OpenOverlay(MenuController.GetOverlay<SelectColoringBookOverlay>());
+            TransitionToOverlay<SelectColoringBookOverlay>();
         }
     }
 }
