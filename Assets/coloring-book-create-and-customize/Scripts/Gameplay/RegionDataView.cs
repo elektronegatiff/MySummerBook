@@ -74,7 +74,6 @@ namespace HootyBird.ColoringBook.Gameplay
             activeFillCoroutine = null;
 
             // Set downscale value.
-            // If downscale value wasn't precalculated, resolve it now (region initialization takes longer).
             bool recalculateDownscalePixelsCount = regionData.Downscale == 0;
             if (recalculateDownscalePixelsCount)
             {
@@ -99,20 +98,33 @@ namespace HootyBird.ColoringBook.Gameplay
             maskTexture.Create();
             SetMaskColor(Color.clear);
 
-            // Init region render texture.
+            // Init region render texture - FORMAT KONTROLÜ
+            RenderTextureFormat regionFormat = RenderTextureFormat.ARGB4444;
+            if (!SystemInfo.SupportsRenderTextureFormat(regionFormat))
+            {
+                regionFormat = RenderTextureFormat.ARGB32;
+            }
+
             regionTexture = new RenderTexture(
                 RegionData.TextureSize.x,
                 RegionData.TextureSize.y,
                 0,
-                RenderTextureFormat.ARGB4444);
+                regionFormat);
             regionTexture.name = $"{regionData.Texture.name}_RegionTexture";
             regionTexture.Create();
+
+            // Init downscale texture - FORMAT KONTROLÜ
+            RenderTextureFormat downscaleFormat = RenderTextureFormat.R8;
+            if (!SystemInfo.SupportsRenderTextureFormat(downscaleFormat))
+            {
+                downscaleFormat = RenderTextureFormat.ARGB32;
+            }
 
             downscaleRegionTexture = new RenderTexture(
                 regionTexture.width / downscale,
                 regionTexture.height / downscale,
                 0,
-                RenderTextureFormat.R8);
+                downscaleFormat);
             downscaleRegionTexture.name = $"{regionData.Texture.name}_DownscaleTexture";
             downscaleRegionTexture.Create();
 

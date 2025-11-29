@@ -2660,6 +2660,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1972462522}
   - component: {fileID: 1972462521}
+  - component: {fileID: 1972462524}
+  - component: {fileID: 1972462523}
   m_Layer: 0
   m_Name: Transition Manager
   m_TagString: Untagged
@@ -2695,6 +2697,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1972462523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972462520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed1f30fa5294dc49a6387efc16c1310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coloringBookView: {fileID: 1244794375}
+  pageTransition: {fileID: 11400000, guid: 57d2dee28715fc6499379ee5905b3caf, type: 2}
+  transitionDelay: 0.5
+  celebrationDelay: 1.5
+  celebrationEffectPrefab: {fileID: 33252476832617801, guid: 4c996d889603649f98f04ce4fb1979d1, type: 3}
+  pageCompleteSound: {fileID: 8300000, guid: 9d12098ed55364e7e80e277242e2c77e, type: 3}
+--- !u!114 &1972462524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972462520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 951932963e5151042b094af4da6ad01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveKey: MySummerBook_Progress
+  firstPageUnlockedByDefault: 1
+  completionThreshold: 1
+  bookCategory: {fileID: 11400000, guid: 7e7bc2e0b9c30fe408091b1edc5d129f, type: 2}
 --- !u!1 &1974725094
 GameObject:
   m_ObjectHideFlags: 0
@@ -4753,6 +4789,14 @@ PrefabInstance:
       propertyPath: m_Alpha
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4443843925711839240, guid: b1c13dada8604314dab7bea6d9fdd092, type: 3}
+      propertyPath: openTransition
+      value: 
+      objectReference: {fileID: 11400000, guid: 57d2dee28715fc6499379ee5905b3caf, type: 2}
+    - target: {fileID: 4443843925711839240, guid: b1c13dada8604314dab7bea6d9fdd092, type: 3}
+      propertyPath: closeTransition
+      value: 
+      objectReference: {fileID: 11400000, guid: 57d2dee28715fc6499379ee5905b3caf, type: 2}
     - target: {fileID: 4670369635572490296, guid: b1c13dada8604314dab7bea6d9fdd092, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -5139,9 +5183,10 @@ MonoBehaviour:
   closePreviousWhenOpened: 1
   onBackSfx: menu-back
   isDefault: 1
-  openTransition: {fileID: 0}
-  closeTransition: {fileID: 0}
+  openTransition: {fileID: 11400000, guid: 57d2dee28715fc6499379ee5905b3caf, type: 2}
+  closeTransition: {fileID: 11400000, guid: 57d2dee28715fc6499379ee5905b3caf, type: 2}
   transitionDelay: 0
+  useTransitionOnBack: 1
   playButton: {fileID: 667487215}
 --- !u!225 &7381843630316273140
 CanvasGroup:
@@ -5455,6 +5500,7 @@ MonoBehaviour:
   openTransition: {fileID: 11400000, guid: 57d2dee28715fc6499379ee5905b3caf, type: 2}
   closeTransition: {fileID: 11400000, guid: 57d2dee28715fc6499379ee5905b3caf, type: 2}
   transitionDelay: 0
+  useTransitionOnBack: 1
   widgetPrefab: {fileID: 8374331982773512763, guid: e47ac748a135d4d4e9575c524a8acf9d, type: 3}
   widgetsParent: {fileID: 2559074214015791719}
 --- !u!114 &8482646052966299466
